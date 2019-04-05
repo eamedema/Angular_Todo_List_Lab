@@ -11,9 +11,9 @@ function TodoController() {
 
     vm.newTodo = "testing";
 
-    vm.add = function() {
-      vm.todos.push($scope.input);
-  };
+  //   vm.add = function() {
+  //     vm.push($scope.input);
+  // };
 }
 
 

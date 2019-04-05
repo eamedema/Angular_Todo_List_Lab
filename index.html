@@ -23,7 +23,7 @@
       </li>
     </ol>
     <input type="text" placeholder="Add your to do" ng-model="input">
-    <button type="submit" class="button" ng-click="add()">Add</button>
+    <button type="submit" class="button" ng-click="$ctrl.todos.push(input)">Add</button>
 
 
   </div>
