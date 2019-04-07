@@ -2,12 +2,7 @@
 
 function TodoController() {  
   const vm = this;
-  // vm.todos = [
-  //   'Walk the dog', 
-  //   'Go to the store', 
-  //   'Get gas',
-  //   'Wash the car'
-  //  ];
+
 
   vm.todos = [
     {task:"Walk the dog", completed: false}, 
@@ -16,13 +11,9 @@ function TodoController() {
     {task:"Wash the car", completed: false}
     ];
 
-    // vm.toggleSelect = function(todo) {
-    //   todo.completed = !todo.completed;
-
-    // },
+  
     vm.removeTask = function(todo){
-      let remove = vm.todos.indexOf(todo);
-      vm.todos.splice(remove, 1)
+      vm.todos.splice(todo, 1);
     };
 
     vm.addTask = function(input) {
@@ -31,7 +22,11 @@ function TodoController() {
 
     vm.completeButton = function(todo) {
       todo.completed = true;
-    }
+    };
+
+    vm.editTask = function(todoEdit, todo) {
+      todo.task = todoEdit;
+    };
 };
 
 
