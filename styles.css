@@ -46,6 +46,8 @@ input {
     padding-bottom: 3px;
     width: 100%;
     cursor: default;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 .button {
@@ -58,7 +60,7 @@ input {
     border-radius: 5px;
 }
 
-.complete {
+.compButton {
     color: #ec5eb0;
     border: 1px solid #ec5eb0;
     background-image:none;
@@ -68,16 +70,14 @@ input {
 }
 
 .delete {
-    text-align: right;
+    position: fixed;
+    right: 0;
+    transform: translateX(-15px) translateY(-12px);
     
 }
 
 .inline {
     display: inline;
-}
-
-.strikethrough {
-    text-decoration: line-through;
 }
 
 .completed {

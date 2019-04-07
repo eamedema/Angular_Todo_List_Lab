@@ -19,7 +19,7 @@
 
       <li class="todoListItem" ng-repeat="todo in $ctrl.todos | filter:searchText">
 
-        <button class="inline" ng-click="$ctrl.completeButton(todo)" ng-if="!todo.completed" >Complete</button>
+        <button class="inline compButton" ng-click="$ctrl.completeButton(todo)" ng-if="!todo.completed" >Complete</button>
 
         <p class="inline" ng-class="{'completed':todo.completed===true}">{{todo.task}}</p>
 
@@ -30,13 +30,8 @@
     
     <input type="text" placeholder="Add your to do" ng-model="input">
     <button type="submit" class="button" ng-click="$ctrl.addTask(input)">Add</button>
-    <!-- <button type="submit" class="button" ng-click="$ctrl.todos.push(input)">Add</button> -->
 
   </div>
-
-  <!-- <input type="text" ng-model="adverb" placeholder="Adverb">
-  <input type="text" ng-model="noun" placeholder="Noun">
-  <p>I ran {{adverb ? adverb : '______'}} into the {{noun ? noun : '______'}}</p> -->
 
 
   <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
