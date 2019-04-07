@@ -2,26 +2,40 @@
 
 function TodoController() {  
   const vm = this;
+  // vm.todos = [
+  //   'Walk the dog', 
+  //   'Go to the store', 
+  //   'Get gas',
+  //   'Wash the car'
+  //  ];
+
   vm.todos = [
-    'Walk the dog', 
-    'Go to the store', 
-    'Get gas',
-    'Wash the car'
+    {task:"Walk the dog", completed: false}, 
+    {task:"Go to the store", completed: false}, 
+    {task:"Get gas", completed: false},
+    {task:"Wash the car", completed: false}
     ];
 
-    vm.newTodo = "testing";
+    // vm.toggleSelect = function(todo) {
+    //   todo.completed = !todo.completed;
 
-  //   vm.add = function() {
-  //     vm.push($scope.input);
-  // };
-}
+    // },
+    vm.removeTask = function(todo){
+      let remove = vm.todos.indexOf(todo);
+      vm.todos.splice(remove, 1)
+    };
+
+    vm.addTask = function(input) {
+      vm.todos.push({task: input, completed: false});
+    };
+
+    vm.complete = function(todo) {
+      todo.completed = true;
+    }
+};
 
 
-
-// familyMembers = [
-//   {name: Andrew, relation: Brobeans, age: 25}
-// ]
 
 angular
-  .module("App")
+  .module("todoApp")
   .controller("TodoController", TodoController);

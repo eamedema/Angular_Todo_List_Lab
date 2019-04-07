@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="App">
+<html lang="en" ng-app="todoApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +16,21 @@
     <p>A place to store things you have to do!</p>
     <input type="text" placeholder="Filter your to-dos" ng-model="searchText">
     <ol class="todoList">
-      <li class="todoListItem" ng-repeat="todo in $ctrl.todos | filter:searchText" ng-class="{'alpha':enabled}">
-        <button class="inline complete" ng-click="$ctrl.todos">Complete</button>
-        <p class="inline">{{todo}}</p>
-        <p class="inline delete" ng-click="$ctrl.todos.splice($index, 1)">X</p>
+
+      <li class="todoListItem" ng-repeat="todo in $ctrl.todos | filter:searchText">
+
+        <button class="inline" ng-click="$ctrl.complete(todo)" ng-if="!todo.completed" >Complete</button>
+
+        <p class="inline completed">{{todo.task}}</p>
+
+        <p class="inline delete" ng-click="$ctrl.removeTask(todo)">X</p>
+
       </li>
     </ol>
+    
     <input type="text" placeholder="Add your to do" ng-model="input">
-    <button type="submit" class="button" ng-click="$ctrl.todos.push(input)">Add</button>
-
+    <button type="submit" class="button" ng-click="$ctrl.addTask(input)">Add</button>
+    <!-- <button type="submit" class="button" ng-click="$ctrl.todos.push(input)">Add</button> -->
 
   </div>
 
