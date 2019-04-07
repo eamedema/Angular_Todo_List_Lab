@@ -29,7 +29,7 @@ function TodoController() {
       vm.todos.push({task: input, completed: false});
     };
 
-    vm.complete = function(todo) {
+    vm.completeButton = function(todo) {
       todo.completed = true;
     }
 };

@@ -19,9 +19,9 @@
 
       <li class="todoListItem" ng-repeat="todo in $ctrl.todos | filter:searchText">
 
-        <button class="inline" ng-click="$ctrl.complete(todo)" ng-if="!todo.completed" >Complete</button>
+        <button class="inline" ng-click="$ctrl.completeButton(todo)" ng-if="!todo.completed" >Complete</button>
 
-        <p class="inline completed">{{todo.task}}</p>
+        <p class="inline" ng-class="{'completed':todo.completed===true}">{{todo.task}}</p>
 
         <p class="inline delete" ng-click="$ctrl.removeTask(todo)">X</p>
 
