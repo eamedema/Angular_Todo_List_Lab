@@ -99,3 +99,9 @@
 .completed {
     text-decoration: line-through;
 }
+
+.editBtn {
+    border: none;
+    box-shadow: none;
+    background-image: none;
+}

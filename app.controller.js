@@ -13,7 +13,8 @@ function TodoController() {
 
   
     vm.removeTask = function(todo){
-      vm.todos.splice(todo, 1);
+      let removeTodo = vm.todos.indexOf(todo);
+      vm.todos.splice(removeTodo, 1);
     };
 
     vm.addTask = function(input) {

@@ -21,12 +21,12 @@
 
         <div ng-show="todo.edit">
             <input class="editTodo"type="text" ng-model="todoEdit"/>
-            <button class="right" ng-click="todo.edit = false; $ctrl.editTask(todoEdit, todo)">Ok</button>
+            <button class="right compButton" ng-click="todo.edit = false; $ctrl.editTask(todoEdit, todo)">Ok</button>
         </div>
         <div ng-hide="todo.edit">
           <button class="inline compButton" ng-click="$ctrl.completeButton(todo)" ng-if="!todo.completed" >Complete</button>
           <p class="inline" ng-class="{'completed':todo.completed}">{{todo.task}}</p>
-          <button class="inline edit" ng-click="todo.edit = true">Edit</button>
+          <button class="inline edit editBtn" ng-click="todo.edit = true">Edit</button>
           <p class="inline right" ng-click="$ctrl.removeTask(todo)">X</p>
         </div>  
 
